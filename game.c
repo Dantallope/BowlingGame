@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "ansi-colors.h"
+
 void setUpPins(char arr[], int len);
 void printPins(char arr[], int len);
 int game(char arr[], int len);
@@ -30,11 +32,11 @@ int main()
     {
         if (player == 0)
         {
-            printf("\nPlayer 1's turn\n");
+            printf("\n%sPlayer 1's%s turn\n", RED, CRESET);
         }
         else
         {
-            printf("\nPlayer 2's turn\n");
+            printf("\n%sPlayer 2's%s turn\n", GRN, CRESET);
         }
 
         if (game(pins, pinLength))
