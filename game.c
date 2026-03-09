@@ -56,7 +56,7 @@ void setUpPins(char arr[], int len)
 
     for (int i = 0; i < len; i++)
     {
-        arr[i] = 'I';
+        arr[i] = '8';
     }
 }
 
@@ -87,19 +87,19 @@ int game(char arr[], int len)
         return 0;
     }
 
-    if (arr[idx] != 'I')
+    if (arr[idx] != '8')
     {
         printf("That pin is already down\n");
         return 0;
     }
 
-    arr[idx] = 'O';
+    arr[idx] = 'o';
 
     int left = idx - 1;
     int right = idx + 1;
 
-    int leftUp = (left >= 0 && arr[left] == 'I');
-    int rightUp = (right < len && arr[right] == 'I');
+    int leftUp = (left >= 0 && arr[left] == '8');
+    int rightUp = (right < len && arr[right] == '8');
 
     if (!leftUp && !rightUp)
     {
@@ -122,7 +122,7 @@ int game(char arr[], int len)
     int idx2 = choice2 - 1;
     if ((idx2 == left && leftUp) || (idx2 == right && rightUp))
     {
-        arr[idx2] = 'O';
+        arr[idx2] = 'o';
         return 1;
     }
     else
@@ -136,7 +136,7 @@ int check(char arr[], int len, int var)
 {
     for (int i = 0; i < len; i++)
     {
-        if (arr[i] == 'I')
+        if (arr[i] == '8')
         {
             return 1;
         }
